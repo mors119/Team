@@ -1,0 +1,123 @@
+Sourcetree 설치
+
+$ git clone 초대보낸사람의 깃주소
+$ git remote -v 해서 연결이 잘 되었는지 확인.
+$ git branch 브랜치생성이름 브랜치 바로 생성하기.
+ex) $ git branch mybrnach
+$ git checkout 브랜치생성이름 생성한 브랜치로 이동하기.
+ex) $ git checkout mybrnach
+Switched to branch 'mybranch'
+$ git branch 입력하면 main에서 내가 생성한 브랜치로 이동된걸 확인할 수 있음.
+ex) main -> mybranch
+vscode열어서 코딩작업하기. remote연결했기때문에 add, commit, push, pull ... 다 가능함.
+합쳐야할 작업물들 옮기고 add, commit, push함.
+push하고 github레포지토리 보면, 'Pull requests'가 생김. 확인해서 merge해주면 끝!
+
+project에서 할 일 > in porgress로 옮기기 
+할 일 선택 > convert > development에서 create a branch > branch source 확인하고 create branch
+git fetch origin
+git checkout 할 일 이름
+
+
+commit 카테고리 관리
+[INITIAL] — repository를 생성하고 최초에 파일을 업로드 할 때
+[ADD] — 신규 파일 추가
+[UPDATE] — 코드 변경이 일어날때
+[REFACTOR] — 코드를 리팩토링 했을때
+[FIX] — 잘못된 링크 정보 변경, 필요한 모듈 추가 및 삭제
+[REMOVE] — 파일 제거
+[STYLE] — 디자인 관련 변경사항
+
+ex) [UPDATE] 10/1일 front-shopping
+
+
+
+### 1. 저장소 생성 및 공유
+1. **저장소 생성**:
+   - GitHub 웹사이트에서 `New Repository` 버튼을 클릭하여 저장소를 생성합니다.
+   - 저장소 이름, 설명, 공개 여부 등을 설정하고 `Create Repository`를 클릭합니다.
+
+2. **원격 저장소 주소 공유**:
+   - 저장소를 생성하면, GitHub는 원격 저장소 URL을 제공합니다. 이 URL은 다음과 같은 형식입니다:
+     ```plaintext
+     https://github.com/your_username/your_repository.git
+     ```
+   - 이 URL을 공동 작업자에게 공유하여 원격 저장소에 접근할 수 있도록 합니다.
+
+### 2. 공동 작업자 추가
+1. **공동 작업자 초대**:
+   - 저장소 페이지로 이동한 후, `Settings` 탭을 클릭합니다.
+   - 왼쪽 메뉴에서 `Manage access`를 선택한 후, `Invite a collaborator` 버튼을 클릭합니다.
+   - 공동 작업자의 GitHub 사용자명을 입력하고 초대장을 보냅니다.
+   - 공동 작업자가 초대장을 수락하면 해당 저장소에 대한 접근 권한이 부여됩니다.
+
+### 3. 공동 작업자 설정
+공동 작업자가 초대를 수락한 후, 저장소를 클론하고 작업을 시작할 수 있습니다.
+
+1. **저장소 클론**:
+   - 공동 작업자가 자신의 로컬 머신에 저장소를 클론합니다.
+     ```sh
+     git clone https://github.com/your_username/your_repository.git
+     cd your_repository
+     ```
+
+2. **브랜치 생성 및 작업**:
+   - 공동 작업자는 각자 브랜치를 생성하여 작업합니다.
+     ```sh
+     git checkout -b feature-branch
+     ```
+
+3. **변경사항 커밋 및 푸시**:
+   - 작업을 완료한 후 변경사항을 커밋하고 원격 저장소에 푸시합니다.
+     ```sh
+     git add .
+     git commit -m "Add new feature"
+     git push origin feature-branch
+     ```
+
+### 4. Pull Request (PR) 생성 및 코드 리뷰
+1. **PR 생성**:
+   - 공동 작업자가 작업을 완료하고 변경사항을 푸시한 후, GitHub 웹사이트에서 PR을 생성합니다.
+   - 저장소 페이지에서 `Pull requests` 탭을 클릭하고 `New pull request` 버튼을 클릭합니다.
+   - 기본 브랜치(예: `master` 또는 `main`)와 작업한 브랜치를 비교한 후 `Create pull request` 버튼을 클릭하여 PR을 생성합니다.
+
+2. **코드 리뷰**:
+   - 팀원들이 PR을 리뷰하고 의견을 남깁니다.
+   - 코드 리뷰가 완료되면 PR을 병합합니다.
+
+### 5. 충돌 해결
+1. **충돌 발생 시**:
+   - 여러 작업자가 동일한 파일을 수정할 경우 충돌이 발생할 수 있습니다.
+   - 충돌이 발생하면 GitHub는 이를 알려주며, 공동 작업자가 충돌을 해결해야 합니다.
+
+2. **충돌 해결 방법**:
+   - 로컬 머신에서 충돌이 발생한 브랜치를 체크아웃하고 병합합니다.
+     ```sh
+     git checkout feature-branch
+     git pull origin master
+     ```
+   - 충돌을 해결하고 변경사항을 커밋합니다.
+     ```sh
+     git add .
+     git commit -m "Resolve merge conflict"
+     git push origin feature-branch
+     ```
+
+### 6. 공동 작업 예제
+1. **저장소 클론 및 브랜치 생성**:
+   ```sh
+   git clone https://github.com/your_username/your_repository.git
+   cd your_repository
+   git checkout -b feature-branch
+   ```
+
+2. **변경사항 커밋 및 푸시**:
+   ```sh
+   echo "Some changes" >> file.txt
+   git add file.txt
+   git commit -m "Add some changes"
+   git push origin feature-branch
+   ```
+
+3. **PR 생성 및 병합**:
+   - GitHub 웹사이트에서 PR을 생성하고 리뷰 후 병합합니다.
