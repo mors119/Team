@@ -1,0 +1,27 @@
+#shopping_cart .inner {
+  width: 1120px;
+  margin: 0 auto;
+}
+#shopping_cart .tit {
+  font-size: 50px;
+}
+#shopping_cart table {
+  border-top: 2px solid #dbdbdb;
+}
+#shopping_cart th {
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+#shopping_cart td {
+  border-bottom: 1px solid #dbdbdb;
+}
+#shopping_cart .goods_info {
+  display: flex;
+  align-items: center;
+}
+#shopping_cart .goods_info .goods_img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  padding-right: 10px;
+}
